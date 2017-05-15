@@ -30,7 +30,7 @@ end
     source node['sql_server'][pkg]['url']
     checksum node['sql_server'][pkg]['checksum']
     installer_type :msi
-    options "/norestart IACCEPTSQLNCLILICENSETERMS=#{node['sql_server']['accept_eula'] ? 'YES' : 'NO'}"
+    options "/promptrestart IACCEPTSQLNCLILICENSETERMS=#{node['sql_server']['accept_eula'] ? 'YES' : 'NO'}"
     action :install
   end
 end
